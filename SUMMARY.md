@@ -7,3 +7,5 @@
   * [2.3-快速排序Quicksort](2-sorting/2.3-quicksort.md)
   * [2.4-优先队列PriorityQueues](2-sorting/2.4-priorityqueues.md)
   * [2.5-排序的应用applications](2-sorting/2.5-applications.md)
+* [3-查找Searching](README.md)
+  *  [3.1-符号表SymbolTables](3-searching/3.1-symboltables.md)
