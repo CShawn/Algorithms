@@ -6,4 +6,4 @@
   * [2.2-归并排序Mergesort](2-sorting/2.2-mergesort.md)
   * [2.3-快速排序Quicksort](2-sorting/2.3-quicksort.md)
   * [2.4-优先队列PriorityQueues](2-sorting/2.4-priorityqueues.md)
-
+  * [2.5-排序的应用applications](2-sorting/2.5-applications.md)
