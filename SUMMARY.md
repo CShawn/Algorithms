@@ -10,3 +10,4 @@
 * [3-查找Searching](README.md)
   * [3.1-符号表SymbolTables](3-searching/3.1-symboltables.md)
   * [3.2-二分查找树BinarySearchTrees](3-searching/3.2-binarysearchtrees.md)
+  * [3.3-平衡二叉查找树BalancedSearchTrees](3-searching/3.3-balancedsearchtrees.md)
