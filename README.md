@@ -1,4 +1,0 @@
-# Algorithms
-
-Notes on Algorithms
-
