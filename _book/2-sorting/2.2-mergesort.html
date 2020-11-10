@@ -1,0 +1,460 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.2-归并排序Mergesort · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.3-quicksort.html" />
+    
+    
+    <link rel="prev" href="2.1-elementarysorts.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    2-排序Sorting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="2.1-elementarysorts.html">
+            
+                <a href="2.1-elementarysorts.html">
+            
+                    
+                    2.1-基本排序ElementarySorts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="2.2-mergesort.html">
+            
+                <a href="2.2-mergesort.html">
+            
+                    
+                    2.2-归并排序Mergesort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="2.3-quicksort.html">
+            
+                <a href="2.3-quicksort.html">
+            
+                    
+                    2.3-快速排序Quicksort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="2.4-priorityqueues.html">
+            
+                <a href="2.4-priorityqueues.html">
+            
+                    
+                    2.4-优先队列PriorityQueues
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="2.5-applications.html">
+            
+                <a href="2.5-applications.html">
+            
+                    
+                    2.5-排序的应用applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    3-查找Searching
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../3-searching/3.1-symboltables.html">
+            
+                <a href="../3-searching/3.1-symboltables.html">
+            
+                    
+                    3.1-符号表SymbolTables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../3-searching/3.2-binarysearchtrees.html">
+            
+                <a href="../3-searching/3.2-binarysearchtrees.html">
+            
+                    
+                    3.2-二分查找树BinarySearchTrees
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../3-searching/3.3-balancedsearchtrees.html">
+            
+                <a href="../3-searching/3.3-balancedsearchtrees.html">
+            
+                    
+                    3.3-平衡二叉查找树BalancedSearchTrees
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.2-归并排序Mergesort</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="22-&#x5F52;&#x5E76;&#x6392;&#x5E8F;mergesort">2.2-&#x5F52;&#x5E76;&#x6392;&#x5E8F;Mergesort</h1>
+<p>&#x5C06;&#x4E00;&#x4E2A;&#x5927;&#x7684;&#x6570;&#x7EC4;&#x62C6;&#x5206;&#x6210;&#x51E0;&#x4E2A;&#x5C0F;&#x7684;&#x6570;&#x7EC4;&#x5206;&#x522B;&#x6392;&#x5E8F;&#xFF0C;&#x518D;&#x5C06;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x5B50;&#x6570;&#x7EC4;&#x5408;&#x5E76;&#x8D77;&#x6765;&#xFF0C;&#x5F97;&#x5230;&#x6700;&#x7EC8;&#x7684;&#x6392;&#x5E8F;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x5408;&#x5E76;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-text">public static void merge(Comparable[] a, int lo, int mid, int hi) { 
+    // Merge a[lo..mid] with a[mid+1..hi].
+    if (a[lo] &lt;= a[mid+1]) {
+        // &#x5F53;&#x524D;&#x534A;&#x90E8;&#x5206;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#x6BD4;&#x540E;&#x534A;&#x90E8;&#x5206;&#x7B2C;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#x5C0F;&#x6216;&#x76F8;&#x7B49;&#x65F6;&#xFF0C;&#x5219;&#x5DF2;&#x7ECF;&#x6392;&#x597D;&#x5E8F;&#xFF0C;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;
+        return;
+    }
+    if (a[lo] &gt;= a[hi]) {
+        // &#x5F53;&#x524D;&#x534A;&#x90E8;&#x5206;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#x6BD4;&#x540E;&#x534A;&#x90E8;&#x5206;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#x5927;&#x6216;&#x76F8;&#x7B49;&#x65F6;&#xFF0C;&#x5219;&#x5C06;&#x540E;&#x8FB9;&#x7684;&#x6570;&#x7EC4;&#x6574;&#x4E2A;&#x653E;&#x5230;&#x524D;&#x8FB9;&#x6570;&#x7EC4;&#x4E4B;&#x524D;&#x5373;&#x53EF;
+        int halfLength = (hi - lo + 1) / 2 + 1;
+        for (int k = lo; k &lt; mid; k++) {
+            exch(a, k, k + halfLength);
+        }
+        if ((mid + halfLength) &lt;= hi) {
+            exch(a, mid, mid + halfLength);
+        }
+        return;
+    }
+    // &#x524D;&#x540E;&#x4E24;&#x90E8;&#x5206;&#x4E24;&#x4E2A;&#x6307;&#x9488;&#x7684;&#x521D;&#x59CB;&#x5316;
+    int i = lo, j = mid+1;
+    // &#x4F7F;&#x7528;&#x8F85;&#x52A9;&#x6570;&#x7EC4;&#x628A;&#x6574;&#x4E2A;&#x6570;&#x7EC4;&#x590D;&#x5236;&#x4E00;&#x4EFD;
+    for (int k = lo; k &lt;= hi; k++) {
+        // Copy a[lo..hi] to aux[lo..hi].
+        aux[k] = a[k];
+    }
+    for (int k = lo; k &lt;= hi; k++) { // Merge back to a[lo..hi].
+        if (i &gt; mid) {
+            // &#x524D;&#x6307;&#x9488;&#x79FB;&#x52A8;&#x5230;&#x5C3E;&#x90E8;&#xFF0C;&#x76F4;&#x63A5;&#x53D6;&#x540E;&#x6307;&#x9488;&#x7684;&#x503C;
+            a[k] = aux[j++];
+        } else if (j &gt; hi ) {
+            // &#x540E;&#x6307;&#x9488;&#x79FB;&#x52A8;&#x5230;&#x5C3E;&#x90E8;&#xFF0C;&#x76F4;&#x63A5;&#x53D6;&#x524D;&#x6307;&#x9488;&#x7684;&#x503C;
+            a[k] = aux[i++];
+        } else if (less(aux[j], aux[i])) {
+            // &#x540E;&#x6307;&#x9488;&#x7684;&#x6570;&#x503C;&#x8F83;&#x5C0F;&#x65F6;&#xFF0C;&#x53D6;&#x540E;&#x6307;&#x9488;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x5E76;&#x79FB;&#x52A8;&#x6307;&#x9488;
+            a[k] = aux[j++];
+        } else {
+            // &#x524D;&#x6307;&#x9488;&#x7684;&#x6570;&#x503C;&#x8F83;&#x5C0F;&#x6216;&#x76F8;&#x7B49;&#x65F6;&#xFF0C;&#x53D6;&#x524D;&#x6307;&#x9488;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x5E76;&#x79FB;&#x52A8;&#x6307;&#x9488;
+            a[k] = aux[i++];
+        }
+    }
+}
+</code></pre>
+<h2 id="&#x81EA;&#x9876;&#x5411;&#x4E0B;&#x7684;&#x5F52;&#x5E76;&#x6392;&#x5E8F;">&#x81EA;&#x9876;&#x5411;&#x4E0B;&#x7684;<a href="https://github.com/CShawn/Algorithms/tree/3f53a56482a5606f6739641f0545ecaba3ea989e/2-sorting/Merge.java" target="_blank">&#x5F52;&#x5E76;&#x6392;&#x5E8F;</a></h2>
+<p>&#x5C06;&#x6570;&#x7EC4;&#x4E8C;&#x5206;&#xFF0C;&#x5404;&#x81EA;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x518D;&#x628A;&#x6392;&#x597D;&#x5E8F;&#x7684;&#x4E24;&#x4E2A;&#x6570;&#x7EC4;&#x5F52;&#x5E76;&#x3002;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E24;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6BCF;&#x4E2A;&#x53C8;&#x8FDB;&#x884C;&#x4E8C;&#x5206;&#xFF0C;&#x9012;&#x5F52;&#x6392;&#x5E8F;&#x53CA;&#x5408;&#x5E76;&#x3002;</p>
+<pre><code class="lang-text">public class Merge {
+    private static Comparable[] aux; // auxiliary array for merges
+    public static void sort(Comparable[] a) {
+    aux = new Comparable[a.length]; // Allocate space just once.
+        sort(a, 0, a.length - 1);
+    }
+    private static void sort(Comparable[] a, int lo, int hi) { 
+         // Sort a[lo..hi].
+         if (hi &lt;= lo) {
+             return;
+         }
+        int mid = lo + (hi - lo)/2;
+        sort(a, lo, mid); // Sort left half.
+        sort(a, mid+1, hi); // Sort right half.
+        merge(a, lo, mid, hi); // Merge results
+    }
+}
+</code></pre>
+<h2 id="&#x81EA;&#x5E95;&#x5411;&#x4E0A;&#x7684;&#x5F52;&#x5E76;&#x6392;&#x5E8F;">&#x81EA;&#x5E95;&#x5411;&#x4E0A;&#x7684;<a href="https://github.com/CShawn/Algorithms/tree/3f53a56482a5606f6739641f0545ecaba3ea989e/2-sorting/MergeBU.java" target="_blank">&#x5F52;&#x5E76;&#x6392;&#x5E8F;</a></h2>
+<p>&#x5148;&#x5C06;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x4E24;&#x4E24;&#x6392;&#x5E8F;&#xFF08;&#x5373;&#x5F53;&#x4F5C;&#x662F;&#x4E24;&#x4E2A;&#x957F;&#x5EA6;&#x662F;1&#x7684;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x5F52;&#x5E76;&#xFF09;&#xFF0C;&#x518D;&#x56DB;&#x4E2A;&#x56DB;&#x4E2A;&#x8FDB;&#x884C;&#x5F52;&#x5E76;&#xFF0C;&#x4F9D;&#x6B21;&#x9012;&#x5F52;&#x5F52;&#x5E76;&#x76F4;&#x5230;&#x5F52;&#x5E76;&#x4E86;&#x6574;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5373;&#x5B8C;&#x6210;&#x6392;&#x5E8F;&#x3002;</p>
+<pre><code class="lang-text">public class MergeBU {
+    private static Comparable[] aux; // auxiliary array for merges
+    public static void sort(Comparable[] a) { 
+        // Do lg N passes of pairwise merges.
+        int N = a.length;
+        aux = new Comparable[N];
+        for (int sz = 1; sz &lt; N; sz = sz+sz) {
+            // sz: subarray size
+            for (int lo = 0; lo &lt; N-sz; lo += sz+sz) {
+                // lo: subarray index
+                merge(a, lo, lo+sz-1, Math.min(lo+sz+sz-1, N-1));
+            }
+        }
+    }
+}
+</code></pre>
+<p>&#x4F7F;&#x7528;&#x94FE;&#x8868;&#x8FDB;&#x884C;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#x65F6;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8F85;&#x52A9;&#x6570;&#x7EC4;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x539F;&#x5730;&#x6392;&#x5E8F;&#x3002;</p>
+<p>&#x81EA;&#x5E95;&#x5411;&#x4E0A;&#x7684;&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#x6B21;&#x6570;&#xFF1A;1/2NlgN ~ NlgN&#xFF0C;&#x8BBF;&#x95EE;&#x6570;&#x7EC4;&#x6B21;&#x6570;&#x6700;&#x591A;&#x4E3A;6NlgN</p>
+<p>&#x5F52;&#x5E76;&#x6392;&#x5E8F;&#x9002;&#x7528;&#x4E8E;&#x6570;&#x91CF;&#x8F83;&#x5927;&#x7684;&#x6570;&#x7EC4;&#x7684;&#x6392;&#x5E8F;&#x3002;&#x4E8C;&#x5206;&#x540E;&#x82E5;&#x5B50;&#x6570;&#x7EC4;&#x8F83;&#x5C0F;&#xFF08;&#x5C0F;&#x4E8E;15&#xFF09;&#x53EF;&#x4F7F;&#x7528;&#x63D2;&#x5165;&#x5E8F;&#x7B49;&#x65B9;&#x5F0F;&#x6765;&#x63D0;&#x9AD8;&#x6548;&#x7387;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2.1-elementarysorts.html" class="navigation navigation-prev " aria-label="Previous page: 2.1-基本排序ElementarySorts">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2.3-quicksort.html" class="navigation navigation-next " aria-label="Next page: 2.3-快速排序Quicksort">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.2-归并排序Mergesort","level":"1.2.2","depth":2,"next":{"title":"2.3-快速排序Quicksort","level":"1.2.3","depth":2,"path":"2-sorting/2.3-quicksort.md","ref":"2-sorting/2.3-quicksort.md","articles":[]},"previous":{"title":"2.1-基本排序ElementarySorts","level":"1.2.1","depth":2,"path":"2-sorting/2.1-elementarysorts.md","ref":"2-sorting/2.1-elementarysorts.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2-sorting/2.2-mergesort.md","mtime":"2020-11-10T09:03:38.985Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-10T09:03:59.478Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

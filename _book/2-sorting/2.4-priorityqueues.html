@@ -1,0 +1,470 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.4-优先队列PriorityQueues · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="2.5-applications.html" />
+    
+    
+    <link rel="prev" href="2.3-quicksort.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Algorithms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    2-排序Sorting
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="2.1-elementarysorts.html">
+            
+                <a href="2.1-elementarysorts.html">
+            
+                    
+                    2.1-基本排序ElementarySorts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="2.2-mergesort.html">
+            
+                <a href="2.2-mergesort.html">
+            
+                    
+                    2.2-归并排序Mergesort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="2.3-quicksort.html">
+            
+                <a href="2.3-quicksort.html">
+            
+                    
+                    2.3-快速排序Quicksort
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="2.4-priorityqueues.html">
+            
+                <a href="2.4-priorityqueues.html">
+            
+                    
+                    2.4-优先队列PriorityQueues
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="2.5-applications.html">
+            
+                <a href="2.5-applications.html">
+            
+                    
+                    2.5-排序的应用applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    3-查找Searching
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../3-searching/3.1-symboltables.html">
+            
+                <a href="../3-searching/3.1-symboltables.html">
+            
+                    
+                    3.1-符号表SymbolTables
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../3-searching/3.2-binarysearchtrees.html">
+            
+                <a href="../3-searching/3.2-binarysearchtrees.html">
+            
+                    
+                    3.2-二分查找树BinarySearchTrees
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../3-searching/3.3-balancedsearchtrees.html">
+            
+                <a href="../3-searching/3.3-balancedsearchtrees.html">
+            
+                    
+                    3.3-平衡二叉查找树BalancedSearchTrees
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >2.4-优先队列PriorityQueues</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="24-&#x4F18;&#x5148;&#x961F;&#x5217;priorityqueues">2.4-&#x4F18;&#x5148;&#x961F;&#x5217;PriorityQueues</h1>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x4E2D;&#x4E0D;&#x540C;&#x4F18;&#x5148;&#x7EA7;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x6709;&#x65F6;&#x4F1A;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x64CD;&#x4F5C;&#xFF1A;&#x6BCF;&#x6B21;&#x53D6;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8;&#x7684;&#x5143;&#x7D20;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x64CD;&#x4F5C;&#x5E76;&#x79FB;&#x9664;&#xFF0C;&#x4E0B;&#x6B21;&#x518D;&#x53D6;&#x5269;&#x4F59;&#x5143;&#x7D20;&#x4E2D;&#x4F18;&#x5148;&#x7EA7;&#x6700;&#x9AD8;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x7EE7;&#x7EED;&#x64CD;&#x4F5C;&#xFF1B;&#x5411;&#x5217;&#x8868;&#x4E2D;&#x63D2;&#x5165;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x5C3D;&#x53EF;&#x80FD;&#x5C06;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x7684;&#x653E;&#x5230;&#x9760;&#x524D;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x5373;&#x9700;&#x8981;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x652F;&#x6301;&#x4E24;&#x79CD;&#x64CD;&#x4F5C;&#xFF1A;&#x5220;&#x9664;&#x6700;&#x5927;&#x5143;&#x7D20;&#x548C;&#x63D2;&#x5165;&#x5143;&#x7D20;&#xFF0C;&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53EB;<strong>&#x4F18;&#x5148;&#x961F;&#x5217;</strong>&#x3002;</p>
+<h2 id="&#x5B9E;&#x73B0;&#x4F18;&#x5148;&#x961F;&#x5217;">&#x5B9E;&#x73B0;&#x4F18;&#x5148;&#x961F;&#x5217;</h2>
+<h3 id="&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#xFF08;&#x65E0;&#x5E8F;&#xFF09;">&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#xFF08;<a href="https://github.com/CShawn/Algorithms/tree/06d734ab0f3fab901624f66ec7996d2def7a9261/2-sorting/UnorderedArrayMaxPQ.java" target="_blank">&#x65E0;&#x5E8F;</a>&#xFF09;</h3>
+<p>&#x63D2;&#x5165;&#x5143;&#x7D20;&#xFF1A;&#x76F4;&#x63A5;&#x63D2;&#x5165; &#x5220;&#x9664;&#x6700;&#x5927;&#x5143;&#x7D20;&#xFF1A;&#x5148;&#x5BF9;&#x5217;&#x8868;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF08;&#x9009;&#x62E9;&#x6392;&#x5E8F;&#xFF09;&#xFF0C;&#x518D;&#x5220;&#x9664;&#x6700;&#x5927;&#x5143;&#x7D20;</p>
+<h3 id="&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#xFF08;&#x6709;&#x5E8F;&#xFF09;">&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#xFF08;<a href="https://github.com/CShawn/Algorithms/tree/06d734ab0f3fab901624f66ec7996d2def7a9261/2-sorting/OrderedArrayMaxPQ.java" target="_blank">&#x6709;&#x5E8F;</a>&#xFF09;</h3>
+<p>&#x63D2;&#x5165;&#x5143;&#x7D20;&#xFF1A;&#x63D2;&#x5165;&#x5143;&#x7D20;&#x540E;&#x5C06;&#x6700;&#x5927;&#x7684;&#x5143;&#x7D20;&#x79FB;&#x52A8;&#x5230;&#x6700;&#x8FB9;&#x4E0A;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x63D2;&#x5165;&#x6392;&#x5E8F; &#x5220;&#x9664;&#x6700;&#x5927;&#x5143;&#x7D20;&#xFF1A;&#x76F4;&#x63A5;&#x5220;&#x9664;</p>
+<h3 id="&#x94FE;&#x8868;&#x5B9E;&#x73B0;">&#x94FE;&#x8868;&#x5B9E;&#x73B0;</h3>
+<p>&#x63D2;&#x5165;&#x5143;&#x7D20;&#xFF1A;&#x63D2;&#x5165;&#x5143;&#x7D20;&#x540E;&#x5C06;&#x6700;&#x5927;&#x7684;&#x5143;&#x7D20;&#x79FB;&#x5230;&#x94FE;&#x8868;&#x5934; &#x5220;&#x9664;&#x6700;&#x5927;&#x5143;&#x7D20;&#xFF1A;&#x76F4;&#x63A5;&#x5220;&#x9664;</p>
+<h3 id="&#x4E8C;&#x53C9;&#x5806;">&#x4E8C;&#x53C9;&#x5806;</h3>
+<p>&#x4E00;&#x68F5;&#x5B8C;&#x5168;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x5176;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x90FD;&#x5927;&#x4E8E;&#x5B83;&#x7684;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x6839;&#x7ED3;&#x70B9;&#x6700;&#x5927;&#xFF0C;&#x79F0;&#x4E3A;<strong>&#x6700;&#x5927;&#x5806;</strong>&#xFF1B;&#x5176;&#x6BCF;&#x4E2A;&#x7ED3;&#x70B9;&#x90FD;&#x5C0F;&#x4E8E;&#x5B83;&#x7684;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x6839;&#x7ED3;&#x70B9;&#x6700;&#x5C0F;&#xFF0C;&#x79F0;&#x4E3A;<strong>&#x6700;&#x5C0F;&#x5806;</strong>&#xFF1B;&#x4E8C;&#x8005;&#x5408;&#x79F0;<strong>&#x4E8C;&#x53C9;&#x5806;</strong>&#x3002;</p>
+<p>&#x4E8C;&#x53C9;&#x5806;&#x53EF;&#x4EE5;&#x7528;&#x6570;&#x7EC4;&#x8868;&#x793A;&#xFF0C;&#x4E00;&#x4E2A;&#x957F;&#x5EA6;&#x4E3A;N&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x4ECE;&#x7D22;&#x5F15;<code>1</code>&#x5F00;&#x59CB;&#xFF0C;&#x5230;<code>N</code>&#xFF1B;&#x6309;&#x5C42;&#x653E;&#x7F6E;&#xFF0C;&#x6839;&#x8282;&#x70B9;&#x4E3A;1&#xFF0C;&#x6839;&#x8282;&#x70B9;&#x7684;&#x4E24;&#x4E2A;&#x5B50;&#x7ED3;&#x8282;&#x4E3A;2&#x548C;3&#xFF0C;&#x5219;&#x7B2C;<code>k</code>&#x4E2A;&#x8282;&#x70B9;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x4E3A;<code>2k</code>&#x548C;<code>2k+1</code>&#xFF0C;&#x800C;&#x7236;&#x8282;&#x70B9;&#x4E3A;<code>k/2</code>&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6B63;&#x662F;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x8BA1;&#x7B97;&#x7236;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x7D22;&#x5F15;&#x4ECE;<code>1</code>&#x5F00;&#x59CB;&#x3002;</p>
+<p>&#x4F7F;&#x7528;&#x4E8C;&#x53C9;&#x5806;&#x5B9E;&#x73B0;&#x4F18;&#x5148;&#x961F;&#x5217;&#x5F88;&#x663E;&#x7136;&#x8981;&#x9AD8;&#x6548;&#x7684;&#x591A;&#xFF0C;&#x4F7F;&#x7528;&#x6700;&#x5927;&#x5806;&#xFF0C;&#x5220;&#x9664;&#x6700;&#x5927;&#x5143;&#x7D20;&#x65F6;&#x53EA;&#x7528;&#x5220;&#x9664;&#x6839;&#x8282;&#x70B9;&#xFF0C;&#x63D2;&#x5165;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x5C06;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x961F;&#x5C3E;&#xFF1B;&#x4E4B;&#x540E;&#xFF0C;&#x518D;&#x5C06;&#x6700;&#x5927;&#x5806;&#x6392;&#x5E8F;&#x3002;&#x90A3;&#x4E48;&#xFF0C;&#x5220;&#x9664;&#x548C;&#x63D2;&#x5165;&#x4E4B;&#x540E;&#x8BE5;&#x600E;&#x4E48;&#x6392;&#x5E8F;&#x5462;&#xFF1F;</p>
+<h4 id="&#x4E0A;&#x6D6E;swim">&#x4E0A;&#x6D6E;swim</h4>
+<p>&#x5728;&#x961F;&#x5C3E;&#x63D2;&#x5165;&#x5143;&#x7D20;&#x540E;&#xFF0C;&#x6709;&#x53EF;&#x80FD;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x6BD4;&#x4E0A;&#x5C42;&#x7684;&#x8282;&#x70B9;&#x5927;&#xFF0C;&#x6B64;&#x65F6;&#x5C31;&#x9700;&#x8981;&#x5C06;&#x5143;&#x7D20;&#x5C42;&#x5C42;&#x4E0A;&#x6D6E;&#xFF0C;&#x5230;&#x8FBE;&#x5B83;&#x5E94;&#x5904;&#x4E8E;&#x7684;&#x4F4D;&#x7F6E;&#x3002;&#x53EA;&#x7528;&#x4E0D;&#x65AD;&#x548C;&#x5176;&#x7236;&#x8282;&#x70B9;&#x6BD4;&#x8F83;&#xFF0C;&#x82E5;&#x6BD4;&#x7236;&#x8282;&#x70B9;&#x5927;&#xFF0C;&#x5219;&#x4E24;&#x8005;&#x4EA4;&#x6362;&#x5373;&#x53EF;&#x3002;</p>
+<pre><code class="lang-text">private void swim(int k) {
+    while (k &gt; 1 &amp;&amp; less(k/2, k)) {
+        exch(k/2, k);
+        // &#x66F4;&#x65B0;k&#x503C;&#xFF0C;&#x7EE7;&#x7EED;&#x5411;&#x4E0A;&#x6BD4;&#x8F83;
+        k = k/2;
+    }
+}
+</code></pre>
+<h4 id="&#x4E0B;&#x6C89;sink">&#x4E0B;&#x6C89;sink</h4>
+<p>&#x5220;&#x9664;&#x4E86;&#x6700;&#x5927;&#x5143;&#x7D20;&#x540E;&#xFF0C;&#x6839;&#x8282;&#x70B9;&#x7A7A;&#x7F3A;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x8865;&#x7A7A;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x5C06;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF08;&#x6570;&#x7EC4;&#x672B;&#x5C3E;&#x8282;&#x70B9;&#xFF09;&#x653E;&#x5230;&#x6839;&#x8282;&#x70B9;&#x4F4D;&#x7F6E;&#x4E0A;&#xFF1B;&#x4E4B;&#x540E;&#xFF0C;&#x540C;&#x7406;&#x9700;&#x8981;&#x5C06;&#x6B64;&#x8282;&#x70B9;&#x5C42;&#x5C42;&#x4E0B;&#x6C89;&#x5230;&#x8FBE;&#x5B83;&#x5E94;&#x5904;&#x4E8E;&#x7684;&#x4F4D;&#x7F6E;&#x3002;</p>
+<pre><code class="lang-text">private void sink(int k) {
+    while (2*k &lt;= N) {
+        int j = 2*k;
+        // &#x5224;&#x65AD;&#x5DE6;&#x53F3;&#x4E24;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x54EA;&#x4E2A;&#x66F4;&#x5927;
+        if (j &lt; N &amp;&amp; less(j, j+1)) j++;
+        // &#x6BD4;&#x8F83;k&#x662F;&#x5426;&#x6BD4;&#x5176;&#x4E24;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#x4E2D;&#x8F83;&#x5927;&#x8005;&#x5C0F;
+        // &#x82E5;k&#x8F83;&#x5927;&#xFF0C;&#x5219;break&#x7ED3;&#x675F;
+        if (!less(k, j)) break;
+        // &#x82E5;k&#x8F83;&#x5C0F;&#x5219;&#x4EA4;&#x6362;&#x4E0B;&#x6C89;
+        exch(k, j);
+        // &#x66F4;&#x65B0;k&#x503C;&#xFF0C;&#x7EE7;&#x7EED;&#x5411;&#x4E0B;&#x6BD4;&#x8F83;
+        k = j;
+    }
+}
+</code></pre>
+<h4 id="&#x4F7F;&#x7528;&#x4E8C;&#x53C9;&#x5806;&#x5B9E;&#x73B0;&#x4F18;&#x5148;&#x961F;&#x5217;">&#x4F7F;&#x7528;&#x4E8C;&#x53C9;&#x5806;&#x5B9E;&#x73B0;&#x4F18;&#x5148;&#x961F;&#x5217;</h4>
+<p>&#x53EF;&#x5B9E;&#x73B0;&#x4E24;&#x79CD;&#x4F18;&#x5148;&#x961F;&#x5217;<a href="https://github.com/CShawn/Algorithms/tree/06d734ab0f3fab901624f66ec7996d2def7a9261/2-sorting/MaxPQ.java" target="_blank">MaxPQ</a>&#x548C;<a href="https://github.com/CShawn/Algorithms/tree/06d734ab0f3fab901624f66ec7996d2def7a9261/2-sorting/MinPQ.java" target="_blank">MinPQ</a></p>
+<pre><code class="lang-text">public class MaxPQ&lt;Key extends Comparable&lt;Key&gt;&gt; {
+    private Key[] pq; // heap-ordered complete binary tree
+    private int N = 0; // in pq[1..N] with pq[0] unused
+    public MaxPQ(int maxN) {
+        pq = (Key[]) new Comparable[maxN+1];
+    }
+    public boolean isEmpty() {
+        return N == 0;
+    }
+    public int size() { 
+        return N;
+    }
+    public void insert(Key v) {
+        pq[++N] = v;
+        swim(N);
+    }
+    public Key delMax() {
+        Key max = pq[1]; // Retrieve max key from top.
+        exch(1, N--); // Exchange with last item.
+        pq[N+1] = null; // Avoid loitering.
+        sink(1); // Restore heap property.
+        return max;
+    }
+}
+</code></pre>
+<p>&#x63D2;&#x5165;&#x5143;&#x7D20;&#xFF0C;&#x6BD4;&#x8F83;&#xFF1A;<code>lgN+1</code>&#x6B21; &#x5220;&#x9664;&#x6700;&#x5927;&#x5143;&#x7D20;&#xFF0C;&#x6BD4;&#x8F83;&#xFF1A;<code>2lgN</code>&#x6B21;</p>
+<h4 id="&#x7D22;&#x5F15;&#x4F18;&#x5148;&#x961F;&#x5217;">&#x7D22;&#x5F15;&#x4F18;&#x5148;&#x961F;&#x5217;</h4>
+<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x8C03;&#x7528;&#x4F18;&#x5148;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED9;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#xFF0C;&#x800C;&#x5F62;&#x6210;<a href="https://github.com/CShawn/Algorithms/tree/06d734ab0f3fab901624f66ec7996d2def7a9261/2-sorting/IndexMaxPQ.java" target="_blank">&#x7D22;&#x5F15;&#x6700;&#x5927;&#x4F18;&#x5148;&#x961F;&#x5217;</a>&#x548C;<a href="https://github.com/CShawn/Algorithms/tree/06d734ab0f3fab901624f66ec7996d2def7a9261/2-sorting/IndexMinPQ.java" target="_blank">&#x7D22;&#x5F15;&#x6700;&#x5C0F;&#x4F18;&#x5148;&#x961F;&#x5217;</a></p>
+<p>&#x6848;&#x4F8B;&#xFF1A;&#x4F7F;&#x7528;&#x4F18;&#x5148;&#x961F;&#x5217;&#x8FDB;&#x884C;&#x591A;&#x5411;&#x5F52;&#x5E76;&#x3002;&#x5C06;&#x591A;&#x4E2A;&#x6709;&#x5E8F;&#x7684;&#x8F93;&#x5165;&#x6D41;&#x5F52;&#x5E76;&#x4E3A;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x6D41;&#xFF0C;&#x5982;&#x591A;&#x79CD;&#x4EEA;&#x5668;&#x7684;&#x8F93;&#x51FA;&#xFF0C;&#x591A;&#x7B14;&#x4EA4;&#x6613;&#x7684;&#x8F93;&#x5165;&#x7B49;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="https://github.com/CShawn/Algorithms/tree/06d734ab0f3fab901624f66ec7996d2def7a9261/2-sorting/Multiway.java" target="_blank">Multiway</a>&#x6765;&#x5B9E;&#x73B0;&#x3002;</p>
+<h2 id="&#x5806;&#x6392;&#x5E8F;"><a href="https://github.com/CShawn/Algorithms/tree/06d734ab0f3fab901624f66ec7996d2def7a9261/2-sorting/Heap.java" target="_blank">&#x5806;&#x6392;&#x5E8F;</a></h2>
+<p>&#x4F7F;&#x7528;&#x5806;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x4E00;&#x79CD;&#x7ECF;&#x5178;&#x800C;&#x4F18;&#x96C5;&#x7684;&#x6392;&#x5E8F;&#x7B97;&#x6CD5;&#xFF1A;<strong>&#x5806;&#x6392;&#x5E8F;</strong>&#xFF1A;</p>
+<ol>
+<li>&#x5C06;&#x6570;&#x636E;&#x6784;&#x9020;&#x6210;&#x4E00;&#x4E2A;&#x6700;&#x5927;&#x5806;&#xFF08;&#x5347;&#x5E8F;&#xFF09;&#x6216;&#x6700;&#x5C0F;&#x5806;&#xFF08;&#x964D;&#x5E8F;&#xFF09; </li>
+<li>&#x6BCF;&#x6B21;&#x53D6;&#x51FA;&#x6700;&#x5927;&#xFF08;&#x5347;&#x5E8F;&#xFF09;&#x6216;&#x6700;&#x5C0F;&#xFF08;&#x964D;&#x5E8F;&#xFF09;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5C06;&#x5176;&#x4E0E;&#x961F;&#x5C3E;&#x7684;&#x5143;&#x7D20;&#x4EA4;&#x6362;&#xFF08;&#x5373;&#x5C06;&#x6700;&#x5927;&#x6216;&#x6700;&#x5C0F;&#x503C;&#x653E;&#x5230;&#x961F;&#x5C3E;&#xFF09; </li>
+<li>&#x518D;&#x5C06;&#x4EA4;&#x6362;&#x540E;&#x7684;&#x5143;&#x7D20;&#x4E0D;&#x65AD;&#x4E0B;&#x6C89;&#xFF0C;&#x518D;&#x6B21;&#x6784;&#x9020;&#x6210;&#x5806;&#x3002;&#x4F9D;&#x6B64;&#x8F6E;&#x5FAA;&#x76F4;&#x81F3;&#x5806;&#x4E2D;&#x65E0;&#x5143;&#x7D20;&#xFF0C;&#x5373;&#x5B8C;&#x6210;&#x4E86;&#x6392;&#x5E8F;&#x3002;</li>
+</ol>
+<p>&#x5BF9;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x6784;&#x9020;&#x5806;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x539F;&#x5730;&#x6392;&#x5E8F;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x4EFB;&#x4F55;&#x989D;&#x5916;&#x7A7A;&#x95F4;&#x5F00;&#x9500;&#x3002;&#x9996;&#x5148;&#x53EF;&#x60F3;&#x5230;&#xFF0C;&#x5C06;&#x6570;&#x7EC4;&#x770B;&#x4F5C;&#x4E00;&#x4E2A;&#x5DF2;&#x6784;&#x5EFA;&#x597D;&#x7684;&#x5806;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x90A3;&#x4E48;&#x53EF;&#x4EE5;&#x4ECE;&#x5934;&#x904D;&#x5386;&#xFF0C;&#x5C06;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x4E0A;&#x6D6E;&#xFF0C;&#x76F4;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x4E0A;&#x6D6E;&#xFF0C;&#x5219;&#x5B8C;&#x6210;&#x4E86;&#x5806;&#x7684;&#x6784;&#x9020;&#x3002;&#x90A3;&#x4E48;&#x540C;&#x6837;&#x4E5F;&#x53EF;&#x4EE5;&#x9006;&#x5411;&#x904D;&#x5386;&#xFF0C;&#x5C06;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x4E0B;&#x6C89;&#x3002;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x4E0A;&#x6D6E;&#x5FC5;&#x987B;&#x5BF9;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x4E0B;&#x6C89;&#x5462;&#xFF1F;&#x5BF9;&#x6700;&#x540E;&#x4E00;&#x5C42;&#x7684;&#x5143;&#x7D20;&#x65E0;&#x9700;&#x4E0B;&#x6C89;&#xFF08;&#x53F6;&#x5B50;&#x8282;&#x70B9;&#x6CA1;&#x6709;&#x5B50;&#x8282;&#x70B9;&#x53EF;&#x6BD4;&#x8F83;&#xFF09;&#xFF0C;&#x53C8;&#x7531;&#x4E8E;&#x5806;&#x662F;&#x4E00;&#x68F5;&#x5B8C;&#x5168;&#x4E8C;&#x53C9;&#x6811;&#xFF0C;&#x53EA;&#x7528;&#x4ECE;<code>N/2</code>&#x5411;&#x524D;&#x904D;&#x5386;&#xFF0C;&#x5373;&#x904D;&#x5386;&#x5C11;&#x4E86;&#x4E00;&#x534A;&#x3002;</p>
+<pre><code class="lang-text">public static void sort(Comparable[] a) {
+    int N = a.length;
+    // &#x4ECE;&#x5012;&#x6570;&#x7B2C;&#x4E8C;&#x5C42;&#x5373;N/2&#x5F00;&#x59CB;&#x5411;&#x524D;&#x904D;&#x5386;&#xFF0C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x6267;&#x884C;&#x4E0B;&#x6C89;
+    for (int k = N/2; k &gt;= 1; k--) {
+        sink(a, k, N);
+    }
+    while (N &gt; 1) {
+        // &#x628A;&#x6700;&#x5927;&#x5806;&#x7684;&#x6700;&#x5927;&#x5143;&#x7D20;&#x4E0E;&#x961F;&#x5C3E;&#x6570;&#x636E;&#x4EA4;&#x6362;&#xFF0C;&#x5373;&#x5220;&#x9664;&#x6700;&#x5927;&#x5806;&#x9876;
+        exch(a, 1, N--);
+        // &#x628A;&#x4EA4;&#x6362;&#x540E;&#x7684;&#x6570;&#x636E;&#x4E0B;&#x6C89;&#xFF0C;&#x91CD;&#x65B0;&#x6784;&#x9020;&#x6700;&#x5927;&#x5806;
+        sink(a, 1, N);
+    }
+}
+</code></pre>
+<p>&#x6BD4;&#x8F83;&#xFF1A;&#x5C0F;&#x4E8E;<code>2NlgN+2N</code>&#x6B21;&#xFF0C;&#x4EA4;&#x6362;&#xFF1A;&#x5C0F;&#x4E8E;<code>NlgN+N</code>&#x6B21;&#x3002;</p>
+<p>&#x9002;&#x7528;&#x4E8E;&#x4ECE;&#x5927;&#x91CF;&#x6570;&#x636E;&#x4E2D;&#x627E;&#x51FA;&#x6700;&#x5927;&#x6216;&#x6700;&#x5C0F;&#x7684;&#x51E0;&#x4E2A;&#x6570;&#x636E;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2.3-quicksort.html" class="navigation navigation-prev " aria-label="Previous page: 2.3-快速排序Quicksort">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="2.5-applications.html" class="navigation navigation-next " aria-label="Next page: 2.5-排序的应用applications">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.4-优先队列PriorityQueues","level":"1.2.4","depth":2,"next":{"title":"2.5-排序的应用applications","level":"1.2.5","depth":2,"path":"2-sorting/2.5-applications.md","ref":"2-sorting/2.5-applications.md","articles":[]},"previous":{"title":"2.3-快速排序Quicksort","level":"1.2.3","depth":2,"path":"2-sorting/2.3-quicksort.md","ref":"2-sorting/2.3-quicksort.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"2-sorting/2.4-priorityqueues.md","mtime":"2020-11-10T09:03:38.986Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-10T09:03:59.478Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
