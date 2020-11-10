@@ -1,4 +1,3 @@
 # Algorithms
 
-Notes on Algorithms.
-
+Notes on Algorithms
